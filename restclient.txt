@@ -1,0 +1,21 @@
+# foo
+GET http://skynet:8080/jsonrpc?request=JSONRPC.Ping
+User-Agent: Emacs Restclient
+
+# ping
+POST http://skynet:8080/jsonrpc
+Content-Type: application/json
+
+{ "jsonrpc": "2.0", "method": "JSONRPC.Ping", "id": "0" }
+
+#
+POST http://skynet:8080/jsonrpc
+Content-Type: application/json
+
+{"jsonrpc": "2.0", "method": "Player.GetActivePlayers", "id": 1}
+
+#
+POST http://skynet:8080/jsonrpc
+Content-Type: application/json
+
+{"jsonrpc": "2.0", "method": "Player.GetItem", "params": { "properties": ["title", "album", "artist", "season", "episode", "duration", "showtitle", "tvshowid", "thumbnail", "file", "fanart", "streamdetails"], "playerid": 1 }, "id": "VideoGetItem"}
